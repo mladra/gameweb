@@ -1,0 +1,32 @@
+server: 
+  port: 8081
+
+# jpa:
+#   properties:
+#     hibernate:
+#       dialect: org.hibernate.dialect.PostgreSQLDialect
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+    url: "jdbc:postgresql://localhost:5432/gameweb"
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    rest:
+      base-path: "/api"
+# spring:
+#   security:
+#     oauth2:
+#       resourceserver:
+#         jwt:
+#           issuer-uri: http://localhost:8083/auth/realms/game-web
+        # Below configuration for runnig resource server independently from authorization server
+        #   jwk-set-uri: http://localhost:8083/auth/realms/game-web/protocol/openid-connect/certs
