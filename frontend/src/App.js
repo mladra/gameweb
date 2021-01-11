@@ -7,11 +7,7 @@ const App = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8081/api/games", {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      } 
-    })
+    fetch("http://localhost:8081/api/games")
     .then(response => response.json())
     .then(retrievedData => setData(retrievedData))
     .catch(err => console.log(err));
