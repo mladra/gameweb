@@ -2,6 +2,7 @@ package com.mladra.domain.game;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -43,7 +44,7 @@ public class Game extends BaseEntity {
     @Column
     private Double rating;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id", nullable = true)
     private Company author;
 

@@ -1,11 +1,6 @@
 server: 
   port: 8081
 
-# jpa:
-#   properties:
-#     hibernate:
-#       dialect: org.hibernate.dialect.PostgreSQLDialect
-
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver

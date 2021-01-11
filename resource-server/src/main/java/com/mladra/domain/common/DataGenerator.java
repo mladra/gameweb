@@ -7,10 +7,12 @@ import java.util.stream.IntStream;
 
 import javax.annotation.PostConstruct;
 
+import com.mladra.domain.company.Company;
 import com.mladra.domain.game.Game;
 import com.mladra.domain.game.GameRepository;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
@@ -30,6 +32,14 @@ public class DataGenerator {
     }
 
     private Collection<Game> createGames() {
-        return IntStream.range(0, 10).mapToObj(num -> Game.builder().name(RandomStringUtils.randomAlphanumeric(16)).description(RandomStringUtils.randomAlphanumeric(128)).releaseDate(new Date()).build()).collect(Collectors.toList());
+        return IntStream.range(0, 10).mapToObj(num -> 
+            Game.builder()
+                .name(RandomStringUtils.randomAlphanumeric(16))
+                .description(RandomStringUtils.randomAlphanumeric(128))
+                .releaseDate(new Date())
+                .author(Company.builder().name(RandomStringUtils.randomAlphanumeric(16)).build())
+                .rating(RandomUtils.nextDouble(0, 5.01))
+                .avgPrice(RandomUtils.nextDouble(0, 200.0))
+                .build()).collect(Collectors.toList());
     }
 }
