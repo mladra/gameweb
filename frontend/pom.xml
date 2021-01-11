@@ -14,8 +14,8 @@
   <name>frontend</name>
 
   <build>
-		<plugins>
-			<plugin>
+    <plugins>
+      <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
         <version>1.11.0</version>
@@ -52,6 +52,6 @@
           </execution>
         </executions>
       </plugin>
-		</plugins>
-	</build>
+    </plugins>
+  </build>
 </project>
