@@ -84,6 +84,7 @@
   <modules>
     <module>authorization-server</module>
     <module>resource-server</module>
+    <module>frontend</module>
   </modules>
 
 </project>
