@@ -2,13 +2,7 @@ package com.mladra.domain.common;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
@@ -41,5 +35,16 @@ public class BaseEntity {
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private Date modificationDate;
+
+    @PrePersist
+    private void prePersist() {
+        createDate = new Date();
+        modificationDate = new Date();
+    }
+
+    @PreUpdate
+    private void preUpdate() {
+        modificationDate = new Date();
+    }
 
 }

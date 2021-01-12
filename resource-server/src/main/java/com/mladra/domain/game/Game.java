@@ -1,22 +1,13 @@
 package com.mladra.domain.game;
 
-import java.util.Date;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 import com.mladra.domain.common.BaseEntity;
 import com.mladra.domain.company.Company;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -44,8 +35,8 @@ public class Game extends BaseEntity {
     @Column
     private Double rating;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "author_id", nullable = true)
+    @ManyToOne
+    @JoinColumn(name = "author_id")
     private Company author;
 
     public Game() {

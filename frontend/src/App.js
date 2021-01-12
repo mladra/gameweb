@@ -33,7 +33,7 @@ const App = () => {
                     <TableCell component="th" scope="row">
                       {row.name}
                     </TableCell>
-                    <TableCell>{row.author.name}</TableCell>
+                    <TableCell>{row.author ? row.author.name : ''}</TableCell>
                     <TableCell>{row.releaseDate}</TableCell>
                     <TableCell>{row.rating}</TableCell>
                     <TableCell>{row.avgPrice}</TableCell>

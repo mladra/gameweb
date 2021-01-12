@@ -28,7 +28,6 @@ public class AuthorizationServerApplication {
 			KeycloakServerProperties keycloakServerProperties) {
 
 		return (evt) -> {
-
 			Integer port = serverProperties.getPort();
 			String keycloakContextPath = keycloakServerProperties.getContextPath();
 
