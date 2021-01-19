@@ -1,0 +1,8 @@
+{
+  "realm": "game-web",
+  "auth-server-url": "http://localhost:8083/auth/",
+  "ssl-required": "external",
+  "resource": "game-web",
+  "public-client": true,
+  "confidential-port": 0
+}

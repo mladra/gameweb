@@ -6,6 +6,12 @@ const GameList = () => {
     const [data, setData]  = useState([])
 
     useEffect(() => {
+        API.obtainAccessToken()
+            .then(response => {
+                console.log(response.headers.get("SET-COOKIE"));
+            })
+            .catch(err => console.error(err));
+
         API.getAllGames()
             .then(response => response.json())
             .then(retrievedData => setData(retrievedData._embedded.games))

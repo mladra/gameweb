@@ -1,15 +1,26 @@
 import './App.css';
-import {Box, Container} from '@material-ui/core';
-import GameList from "./domain/GamesList";
+import Login from "./domain/Login";
+import { ReactKeycloakProvider } from "@react-keycloak/web";
+import keycloak from "./keycloak.config";
+
+const eventLogger = (event, error) => {
+    console.log('onKeycloakEvent', event, error);
+}
+
+const tokenLogger = (tokens) => {
+    console.log('onKeycloakTokens', tokens);
+}
 
 const App = () => {
 
   return (
-    <Container>
-        <Box display="flex" justifyContent="center" pt={2}>
-          <GameList />
-        </Box>
-    </Container>
+    <ReactKeycloakProvider
+        authClient={keycloak}
+        onEvent={eventLogger}
+        onTokens={tokenLogger}
+    >
+      <Login />
+    </ReactKeycloakProvider>
   );
 }
 
