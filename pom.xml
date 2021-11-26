@@ -3,10 +3,10 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mladra</groupId>
-  <artifactId>game-web</artifactId>
+  <artifactId>racing-app</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>game-web</name>
+  <name>racing-app</name>
 
   <url>http://www.example.com</url>
 
