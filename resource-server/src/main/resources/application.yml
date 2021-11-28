@@ -23,5 +23,5 @@ spring:
 #       resourceserver:
 #         jwt:
 #           issuer-uri: http://localhost:8083/auth/realms/game-web
-        # Below configuration for runnig resource server independently from authorization server
+        # Below configuration for running resource server independently from authorization server
         #   jwk-set-uri: http://localhost:8083/auth/realms/game-web/protocol/openid-connect/certs
